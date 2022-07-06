@@ -25,10 +25,10 @@ class TestController extends BaseController
     /*########## Задача №1 ##########*/
     private function task1()
     {
-        $a = new Test();
-        $b = new Test();
-        $c = new Test();
-        $d = new Test();
+        $a = new Test("a");
+        $b = new Test("b");
+        $c = new Test("c");
+        $d = new Test("d");
         $a->next = $b;
         $b->next = $c;
         $c->next = $d;
@@ -44,16 +44,16 @@ class TestController extends BaseController
     }
 
 
-   private function reverse($a) {
-       $tmp = clone($a);
-       $lastObj = null;
-       while($tmp){
-           $nextObj = $tmp->next ;
-           $tmp->next = $lastObj;
-           $lastObj = $tmp;
-           $tmp = $nextObj;
-       }
-       return $lastObj;
+    private function reverse($a) {
+        $tmp = clone($a);
+        $lastObj = null;
+        while($tmp){
+            $nextObj = $tmp->next ;
+            $tmp->next = $lastObj;
+            $lastObj = $tmp;
+            $tmp = $nextObj;
+        }
+        return $lastObj;
     }
 
     /*########## Задача №2 ##########*/
@@ -72,7 +72,7 @@ class TestController extends BaseController
     /*########## Задача №3 ##########*/
     private function task3()
     {
-       // первые входные данные
+        // первые входные данные
         $boxes = [1, 2, 1, 5, 1, 3, 5, 2, 5, 5];
         $weight = 6;
         $maxCount = $this->getResult($boxes,$weight);
@@ -101,19 +101,19 @@ class TestController extends BaseController
                  * 1 - исключаем суммирование самого на себя $i != $j
                  * 2 - сумма должна быть = $weight
                  */
-                  if( $i != $j  && ($box1Weight + $box2Weight)  == $weight ){
-                      $arResult["normal"][]  = "[{$i}] {$box1Weight} +  [{$j}] {$box2Weight} = {$weight}";
-                      unset($boxes[$i]);
-                      unset($boxes[$j]);
-                      break;
-                  }
+                if( $i != $j  && ($box1Weight + $box2Weight)  == $weight ){
+                    $arResult["normal"][]  = "[{$i}] {$box1Weight} +  [{$j}] {$box2Weight} = {$weight}";
+                    unset($boxes[$i]);
+                    unset($boxes[$j]);
+                    break;
+                }
             }
         }
         /*
          * Не удовлетвовряющие условию элементы массива
          */
         $arResult['not_normal'] = $boxes;
-       // $this->l($arResult);
+        // $this->l($arResult);
         return count($arResult['normal']);
     }
 
