@@ -59,7 +59,7 @@ class TestController extends BaseController
     /*########## Задача №2 ##########*/
     private function task2()
     {
-        $orders = Order::with('manager')->take(50)->get();
+        $orders = Order::with('manager')->take(5)->get();
 
         foreach ($orders as $order) {
             echo '<br>';

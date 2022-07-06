@@ -102,5 +102,5 @@ public function getResult(array $boxes, int $weight): int
 ## Решение
 
 1 Смотрите контроллер TestController::testTask()<br>
-2 Скриншот:
-3 Ссылка на контроллер: ~~~~
+2 Скриншот: ![Alt text](/storage/test.png?raw=true "Title")<br>
+3 Ссылка на контроллер: https://github.com/deen8122/test-task-laravel/blob/main/app/Http/Controllers/TestController.php
