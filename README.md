@@ -103,4 +103,4 @@ public function getResult(array $boxes, int $weight): int
 
 1 Смотрите контроллер TestController::testTask() <br>Ссылка на контроллер: https://github.com/deen8122/test-task-laravel/blob/main/app/Http/Controllers/TestController.php<br>
 2 Скриншот c результатами: ![Screenshot](storage/test2.png)<br>
-3. Для запуска (если друг захочется делаем миграцию)<br>
+
